@@ -1,0 +1,50 @@
+.wrapper-modal {
+    display: none;
+    z-index: 9999999;
+}
+
+.wrapper-modal dialog {
+    z-index: 9999999;
+    min-width: 518px;
+    max-width: 518px;
+}
+
+.wrapper-modal .overlay {
+    background-color: rgba(0,0,0,.3);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.wrapper-modal .title {
+    justify-content: center;
+}
+
+.wrapper-modal .times {
+    margin-left: auto;
+}
+
+.wrapper-modal.open {
+    display: block;
+}
+
+
+.wrapper-modal a {
+    font-size: 12px;
+}
+
+.wrapper-modal p {
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .wrapper-modal dialog {
+        z-index: 2;
+        min-width: 318px;
+        max-width: 318px;
+    }    
+}

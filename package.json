@@ -1,0 +1,43 @@
+{
+  "name": "smvrt",
+  "homepage": "http://smvrtlegal.com/",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@ant-design/icons": "5.2.5",
+    "@ant-design/pro-components": "2.6.12",
+    "@ant-design/pro-layout": "^7.16.8",
+    "@ckeditor/ckeditor5-build-classic": "^38.1.1",
+    "@ckeditor/ckeditor5-build-decoupled-document": "^38.1.0",
+    "@ckeditor/ckeditor5-editor-decoupled": "^38.1.0",
+    "@ckeditor/ckeditor5-import-word": "^38.1.0",
+    "@ckeditor/ckeditor5-react": "^6.1.0",
+    "antd": "^5.8.2",
+    "autoprefixer": "10.4.14",
+    "axios": "^1.4.0",
+    "eslint": "8.40.0",
+    "eslint-config-next": "13.4.1",
+    "form-data": "^4.0.0",
+    "jquery": "^3.7.0",
+    "jsonwebtoken": "^8.5.1",
+    "mammoth": "^1.6.0",
+    "moment": "^2.29.4",
+    "next": "^13.4.14-canary.1",
+    "postcss": "8.4.23",
+    "react": "18.2.0",
+    "react-calendar": "^4.2.1",
+    "react-dom": "18.2.0",
+    "react-highlight-words": "^0.20.0",
+    "tailwindcss": "3.3.2"
+  },
+  "devDependencies": {
+    "laravel-echo": "^1.15.1",
+    "pusher-js": "^8.0.2"
+  }
+}

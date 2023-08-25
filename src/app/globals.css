@@ -1,0 +1,259 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Eina03";
+}
+
+@font-face {
+  font-family: "Eina04";
+  font-style: light;
+  font-weight: 200;
+  src: local(""), url("/fonts/Eina 04/Eina 04 W03 Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Eina04";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("/fonts/Eina 04/Eina 04 W03 Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Eina04";
+  font-style: bold;
+  font-weight: 700;
+  src: local(""), url("/fonts/Eina 04/Eina 04 W03 SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Eina03";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("/fonts/Eina 03/Eina 03 W03 Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Eina03";
+  font-style: bold;
+  font-weight: 700;
+  src: local(""), url("/fonts/Eina 03/Eina 03 W03 SemiBold.woff") format("woff");
+}
+
+.react-calendar {
+  font-family: Eina03, Helvetica, sans-serif !important;
+  font-size: 14px !important;
+  border: none !important;
+  border-radius: 6px !important;
+  padding: 10px !important;
+}
+
+.react-calendar .react-calendar__tile--active {
+  background-color: #4ecfe0 !important;
+  /* color: #222 !important; */
+  color: #fff !important;
+}
+
+.react-calendar .react-calendar__tile--rangeStart {
+  background-color: #4ecfe0 !important;
+  /* color: #222 !important; */
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  color: #fff !important;
+}
+
+.react-calendar .react-calendar__tile--rangeEnd {
+  background-color: #4ecfe0 !important;
+  /* color: #222 !important; */
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  color: #fff !important;
+}
+
+.react-calendar .reminder-setting-tile.react-calendar__tile--active,
+.react-calendar .reminder-setting-tile.react-calendar__tile--rangeStart,
+.react-calendar .reminder-setting-tile.react-calendar__tile--rangeEnd {
+  background-color: #fd7983 !important;
+}
+
+.react-calendar .react-calendar__tile.react-calendar__month-view__days__day:disabled {
+  background-color: #4ecfe0 !important;
+  color: #fff !important;
+  border-radius: 50%;
+}
+
+.react-calendar .react-calendar__tile--now {
+  position: relative;
+  background-color: inherit;
+}
+
+.react-calendar .react-calendar__tile--now:after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 50%;
+  background-color: #297fff;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+/* editor */
+.document-editor {
+  border: 1px solid var(--ck-color-base-border);
+  border-radius: var(--ck-border-radius);
+
+  /* Set vertical boundaries for the document editor. */
+  max-height: 700px;
+
+  /* This element is a flex container for easier rendering. */
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.document-editor__toolbar {
+  /* Make sure the toolbar container is always above the editable. */
+  z-index: 1;
+
+  /* Create the illusion of the toolbar floating over the editable. */
+  box-shadow: 0 0 5px hsla(0, 0%, 0%, 0.2);
+
+  /* Use the CKEditor CSS variables to keep the UI consistent. */
+  border-bottom: 1px solid var(--ck-color-toolbar-border);
+}
+
+/* Adjust the look of the toolbar inside of the container. */
+.document-editor__toolbar .ck-toolbar {
+  border: 0;
+  border-radius: 0;
+}
+
+/* Make the editable container look like the inside of a native word processor app. */
+.document-editor__editable-container {
+  padding: calc(2 * var(--ck-spacing-large));
+  background: var(--ck-color-base-foreground);
+
+  /* Make it possible to scroll the "page" of the edited content. */
+  overflow-y: scroll;
+}
+
+.document-editor__editable-container .document-editor__editable.ck-editor__editable {
+  /* Set the dimensions of the "page". */
+  width: 100%;
+  min-height: 21cm;
+
+  /* Keep the "page" off the boundaries of the container. */
+  padding: 1cm 2cm 2cm;
+
+  border: 1px hsl(0, 0%, 82.7%) solid;
+  border-radius: var(--ck-border-radius);
+  background: white;
+
+  /* The "page" should cast a slight shadow (3D illusion). */
+  box-shadow: 0 0 5px hsla(0, 0%, 0%, 0.1);
+
+  /* Center the "page". */
+  margin: 0 auto;
+}
+
+/* Override the page's width in the "Examples" section which is wider. */
+.main__content-wide .document-editor__editable-container .document-editor__editable.ck-editor__editable {
+  width: 18cm;
+}
+
+/* Set the default font for the "page" of the content. */
+.document-editor .ck-content,
+.document-editor .ck-heading-dropdown .ck-list .ck-button__label {
+  font: 16px/1.6 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Adjust the headings dropdown to host some larger heading styles. */
+.document-editor .ck-heading-dropdown .ck-list .ck-button__label {
+  line-height: calc(1.7 * var(--ck-line-height-base) * var(--ck-font-size-base));
+  min-width: 6em;
+}
+
+/* Scale down all heading previews because they are way too big to be presented in the UI.
+Preserve the relative scale, though. */
+.document-editor .ck-heading-dropdown .ck-list .ck-heading_heading1 .ck-button__label,
+.document-editor .ck-heading-dropdown .ck-list .ck-heading_heading2 .ck-button__label {
+  transform: scale(0.8);
+  transform-origin: left;
+}
+
+.editor-container .table {
+  width: 100%;
+}
+
+.editor-container h1,
+.editor-container h2,
+.editor-container h3,
+.editor-container h4,
+.editor-container h5,
+.editor-container h6 {
+  font-weight: bold;
+}
+
+@media only screen and (max-width: 960px) {
+  /* Because on mobile 2cm paddings are to big. */
+  .document-editor__editable-container .document-editor__editable.ck-editor__editable {
+    padding: 1.5em;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .main__content-wide .document-editor__editable-container .document-editor__editable.ck-editor__editable {
+    width: 100%;
+  }
+}
+
+/* Style document editor a'ka Google Docs.*/
+@media only screen and (min-width: 1360px) {
+  .main .main__content.main__content-wide {
+    padding-right: 0;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .main .main__content.main__content-wide {
+    width: 24cm;
+  }
+
+  .main .main__content.main__content-wide .main__content-inner {
+    width: auto;
+    margin: 0 50px;
+  }
+
+  /* Keep "page" look based on viewport width. */
+  .main__content-wide .document-editor__editable-container .document-editor__editable.ck-editor__editable {
+    width: 60%;
+  }
+}
+
+/* Full View */
+.full-view-desc h1,
+.full-view-desc h2,
+.full-view-desc h3,
+.full-view-desc h4,
+.full-view-desc h5,
+.full-view-desc h6 {
+  font-weight: bold;
+}
+
+/* .editor-container ul,
+.full-view-desc ul {
+  list-style: disc;
+}
+
+.editor-container ol,
+.full-view-desc ol {
+  list-style: decimal;
+} */
+
+.editor-container table td,
+.full-view-desc table td {
+  border-color: #000;
+}
+
+::-webkit-file-upload-button { cursor:pointer; }
